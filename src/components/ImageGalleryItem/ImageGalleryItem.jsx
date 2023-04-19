@@ -1,8 +1,15 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-export const ImageGalleryItem = ({ imageUrl, altText, clickHandler }) => {
+export const ImageGalleryItem = ({
+  imageUrl,
+  altText,
+  largeImageUrl,
+  clickHandler,
+}) => {
   return (
-    <StyledImageGalleryItem onClick={clickHandler}>
+    <StyledImageGalleryItem
+      onClick={() => clickHandler(largeImageUrl, altText)}
+    >
       <StyledImageGalleryItemImage src={imageUrl} alt={altText} />
     </StyledImageGalleryItem>
   );

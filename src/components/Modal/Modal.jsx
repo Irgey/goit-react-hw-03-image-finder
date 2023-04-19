@@ -34,7 +34,10 @@ export class Modal extends Component {
 }
 
 Modal.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+  ]),
 };
 const StyledOverlay = styled.div`
   position: fixed;
