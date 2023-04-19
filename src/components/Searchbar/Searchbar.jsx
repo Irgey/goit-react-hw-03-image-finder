@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
@@ -24,6 +24,7 @@ export const Searchbar = ({ formSubmitHandler }) => {
     </StyledSearchbar>
   );
 };
+
 Searchbar.propTypes = {
   formSubmitHandler: PropTypes.func,
 };
