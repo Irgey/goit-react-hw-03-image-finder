@@ -6,12 +6,12 @@ import { getPictures } from 'utils/pixabayAPI';
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
+import { StyledSection } from './App.styled';
 /**
  * Libraries
  */
 import { Component } from 'react';
 import { BallTriangle } from 'react-loader-spinner';
-import styled from 'styled-components';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 export class App extends Component {
@@ -123,9 +123,3 @@ export class App extends Component {
     );
   }
 }
-
-const StyledSection = styled.section`
-  display: flex;
-  flex-direction: ${props => (props.$loader ? 'raw' : 'column')};
-  justify-content: center;
-`;
