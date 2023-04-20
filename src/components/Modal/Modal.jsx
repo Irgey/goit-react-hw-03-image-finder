@@ -14,18 +14,14 @@ export class Modal extends Component {
   }
 
   onEscapeClick = ev => {
-    if (ev.code === 'Escape') {
+    if (ev.code === 'Escape'||ev.target === ev.currentTarget) {
       this.props.onClose();
-    }
+    }  
   };
-  onOverlayClick = ev => {
-    if (ev.target === ev.currentTarget) {
-      this.props.onClose();
-    }
-  };
+
   render() {
     return createPortal(
-      <StyledOverlay onClick={this.onOverlayClick} id="backdrop">
+      <StyledOverlay onClick={this.onEscapeClick} id="backdrop">
         <StyledModal>{this.props.children}</StyledModal>
       </StyledOverlay>,
       modalRoot
@@ -38,6 +34,7 @@ Modal.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
   ]),
+  onClose: PropTypes.func
 };
 const StyledOverlay = styled.div`
   position: fixed;

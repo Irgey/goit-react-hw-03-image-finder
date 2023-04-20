@@ -36,11 +36,10 @@ export class App extends Component {
     ) {
       this.getData();
     }
-    if (prevState.totalImageCount !== this.state.totalImageCount) {
-    }
     if (
       this.state.totalImageCount === this.state.images.length &&
-      this.state.totalImageCount !== 0
+      this.state.totalImageCount !== 0 &&
+      prevState.images.length !== this.state.images.length
     ) {
       console.log(this.state.totalImageCount, this.state.images.length);
       toast(`That's all images on this request 😥`);
